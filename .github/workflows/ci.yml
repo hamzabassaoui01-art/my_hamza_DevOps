@@ -27,4 +27,4 @@ jobs:
         run: node --check script.js
 
       - name: Check Formatting
-        run: npx --yes prettier --check index.html script.js
+        run: npx --yes prettier@3.10.1 --check index.html script.js
