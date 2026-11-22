@@ -26,11 +26,20 @@ jobs:
       - name: Check JavaScript Syntax
         run: node --check script.js
 
+      - name: Fix HTML Formatting
+        run: npx --yes prettier@3.10.1 --write index.html
+
       - name: Check HTML Formatting
         run: npx --yes prettier@3.10.1 --check index.html
 
+      - name: Fix CSS Formatting
+        run: npx --yes prettier@3.10.1 --write style.css
+
       - name: Check CSS Formatting
         run: npx --yes prettier@3.10.1 --check style.css
+
+      - name: Fix JS Formatting
+        run: npx --yes prettier@3.10.1 --write script.js
 
       - name: Check JS Formatting
         run: npx --yes prettier@3.10.1 --check script.js
