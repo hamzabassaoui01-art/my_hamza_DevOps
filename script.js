@@ -1,4 +1,3 @@
-
 const title = document.querySelector("h1");
 const paragraph = document.querySelector("p");
 
