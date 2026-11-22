@@ -9,4 +9,4 @@ function changeInformation() {
   paragraph.style.color = "green";
 }
 
-title.addEventListener("click", changeInfo
+title.addEventListener("click", changeInformation);
