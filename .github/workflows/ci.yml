@@ -1,5 +1,5 @@
 
-name: HTML JS Quality Check
+name: HTML CSS JS Quality Check
 
 on:
   push:
@@ -23,8 +23,16 @@ jobs:
       - name: Check HTML
         run: npx --yes htmlhint index.html
 
+      - name: Install CSS Linter
+        run: npm install --no-save stylelint@16 stylelint-config-standard@36
+
+      - name: Check CSS
+        run: |
+          echo '{"extends":["stylelint-config-standard"]}' > .stylelintrc.json
+          npx stylelint style.css --config .stylelintrc.json
+
       - name: Check JavaScript Syntax
         run: node --check script.js
 
       - name: Check Formatting
-        run: npx --yes prettier@3.10.1 --check index.html script.js
+        run: npx --yes prettier@3.10.1 --check index.html style.css script.js
